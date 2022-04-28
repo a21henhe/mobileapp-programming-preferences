@@ -79,12 +79,12 @@ Second Activity:
 ```
 
 
-MainActivity:
+SecondActivity:
 
 ![](secondActivity.png)
 
 
-SecondActivity:
+MainActivity:
 
 ![](mainActivity.png)
 
