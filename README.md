@@ -78,7 +78,6 @@ Second Activity:
 
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
 
 MainActivity:
 
