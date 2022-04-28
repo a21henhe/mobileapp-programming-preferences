@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,10 +25,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        prefs = getPreferences(MODE_PRIVATE);
-
         prefText = findViewById(R.id.prefText);
-        prefText.setText(prefs.getString("MyAppPreferenceString", "No pref found"));
+        prefs = getSharedPreferences("com.example.project", Context.MODE_PRIVATE);
 
         navigateToSecondActivity = findViewById(R.id.navigateToSecondActivity);
         navigateToSecondActivity.setOnClickListener(new View.OnClickListener(){
@@ -37,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    protected void onResume() {
+        super.onResume();
+        prefText.setText(prefs.getString("text", "No pref found"));
     }
 
     private void onButtonClick() {
